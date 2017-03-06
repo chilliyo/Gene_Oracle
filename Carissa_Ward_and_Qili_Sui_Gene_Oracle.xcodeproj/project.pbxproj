@@ -15,9 +15,9 @@
 		D9B0C9E91E6CD9F70001CCBF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9B0C9E71E6CD9F70001CCBF /* LaunchScreen.storyboard */; };
 		D9B0C9F41E6CD9F70001CCBF /* Carissa_Ward_and_Qili_Sui_Gene_OracleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B0C9F31E6CD9F70001CCBF /* Carissa_Ward_and_Qili_Sui_Gene_OracleTests.swift */; };
 		D9B0C9FF1E6CD9F70001CCBF /* Carissa_Ward_and_Qili_Sui_Gene_OracleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B0C9FE1E6CD9F70001CCBF /* Carissa_Ward_and_Qili_Sui_Gene_OracleUITests.swift */; };
-		D9B0CA0D1E6CDE4D0001CCBF /* Third.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B0CA0C1E6CDE4D0001CCBF /* Third.swift */; };
-		D9B0CA0F1E6CDEFA0001CCBF /* Forth.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B0CA0E1E6CDEFA0001CCBF /* Forth.swift */; };
 		D9B0CA111E6CDF2D0001CCBF /* Fifth.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B0CA101E6CDF2D0001CCBF /* Fifth.swift */; };
+		E733A15D1E6CF06F00161C16 /* Third.swift in Sources */ = {isa = PBXBuildFile; fileRef = E733A15C1E6CF06F00161C16 /* Third.swift */; };
+		E733A15F1E6CF09100161C16 /* Forth.swift in Sources */ = {isa = PBXBuildFile; fileRef = E733A15E1E6CF09100161C16 /* Forth.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,9 +52,9 @@
 		D9B0C9FA1E6CD9F70001CCBF /* Carissa_Ward_and_Qili_Sui_Gene_OracleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Carissa_Ward_and_Qili_Sui_Gene_OracleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9B0C9FE1E6CD9F70001CCBF /* Carissa_Ward_and_Qili_Sui_Gene_OracleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carissa_Ward_and_Qili_Sui_Gene_OracleUITests.swift; sourceTree = "<group>"; };
 		D9B0CA001E6CD9F70001CCBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D9B0CA0C1E6CDE4D0001CCBF /* Third.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Third.swift; sourceTree = "<group>"; };
-		D9B0CA0E1E6CDEFA0001CCBF /* Forth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Forth.swift; sourceTree = "<group>"; };
 		D9B0CA101E6CDF2D0001CCBF /* Fifth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fifth.swift; sourceTree = "<group>"; };
+		E733A15C1E6CF06F00161C16 /* Third.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Third.swift; sourceTree = "<group>"; };
+		E733A15E1E6CF09100161C16 /* Forth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Forth.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,9 +109,9 @@
 				D9B0C9DE1E6CD9F70001CCBF /* FirstViewController.swift */,
 				D9B0C9E01E6CD9F70001CCBF /* SecondViewController.swift */,
 				D9B0C9E21E6CD9F70001CCBF /* Main.storyboard */,
-				D9B0CA0E1E6CDEFA0001CCBF /* Forth.swift */,
+				E733A15E1E6CF09100161C16 /* Forth.swift */,
+				E733A15C1E6CF06F00161C16 /* Third.swift */,
 				D9B0CA101E6CDF2D0001CCBF /* Fifth.swift */,
-				D9B0CA0C1E6CDE4D0001CCBF /* Third.swift */,
 				D9B0C9E51E6CD9F70001CCBF /* Assets.xcassets */,
 				D9B0C9E71E6CD9F70001CCBF /* LaunchScreen.storyboard */,
 				D9B0C9EA1E6CD9F70001CCBF /* Info.plist */,
@@ -271,12 +271,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E733A15D1E6CF06F00161C16 /* Third.swift in Sources */,
 				D9B0C9E11E6CD9F70001CCBF /* SecondViewController.swift in Sources */,
 				D9B0CA111E6CDF2D0001CCBF /* Fifth.swift in Sources */,
-				D9B0CA0D1E6CDE4D0001CCBF /* Third.swift in Sources */,
 				D9B0C9DD1E6CD9F70001CCBF /* AppDelegate.swift in Sources */,
 				D9B0C9DF1E6CD9F70001CCBF /* FirstViewController.swift in Sources */,
-				D9B0CA0F1E6CDEFA0001CCBF /* Forth.swift in Sources */,
+				E733A15F1E6CF09100161C16 /* Forth.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,6 +521,7 @@
 				D9B0CA051E6CD9F70001CCBF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D9B0CA061E6CD9F70001CCBF /* Build configuration list for PBXNativeTarget "Carissa_Ward_and_Qili_Sui_Gene_OracleTests" */ = {
 			isa = XCConfigurationList;
@@ -529,6 +530,7 @@
 				D9B0CA081E6CD9F70001CCBF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D9B0CA091E6CD9F70001CCBF /* Build configuration list for PBXNativeTarget "Carissa_Ward_and_Qili_Sui_Gene_OracleUITests" */ = {
 			isa = XCConfigurationList;
@@ -537,6 +539,7 @@
 				D9B0CA0B1E6CD9F70001CCBF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

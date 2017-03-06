@@ -52,17 +52,30 @@
                         <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="qM3-hy-mcS">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="74"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textAttributes key="titleTextAttributes">
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
+                            </textAttributes>
                             <items>
                                 <navigationItem title="Profile Viewing" prompt="    " id="Py5-Y8-M6I" colorLabel="IBBuiltInLabel-Orange"/>
                             </items>
                         </navigationBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="h6h-P2-4Fz">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="basic" textLabel="k5j-Gt-YdR" style="IBUITableViewCellStyleDefault" id="h6h-P2-4Fz">
                                 <rect key="frame" x="0.0" y="102" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="h6h-P2-4Fz" id="g8D-oB-ITv">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="k5j-Gt-YdR">
+                                            <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -88,6 +101,10 @@
                         <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="bKj-Cd-CoG">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="74"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textAttributes key="titleTextAttributes">
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
+                            </textAttributes>
                             <items>
                                 <navigationItem title="Profile Selector" prompt="    " id="qHI-XQ-PtU">
                                     <barButtonItem key="rightBarButtonItem" title="Continue" id="XAJ-73-tNo">
@@ -99,12 +116,21 @@
                             </items>
                         </navigationBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="nI2-3h-FBQ">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="basic" textLabel="zFR-xe-vWM" style="IBUITableViewCellStyleDefault" id="nI2-3h-FBQ">
                                 <rect key="frame" x="0.0" y="102" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nI2-3h-FBQ" id="ew8-UV-6QK">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zFR-xe-vWM">
+                                            <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>

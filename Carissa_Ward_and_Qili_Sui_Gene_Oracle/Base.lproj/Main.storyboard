@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -18,20 +18,37 @@
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Gene Oracle" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
-                                <rect key="frame" x="93" y="30" width="187.5" height="38"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="113.66666666666669" y="30" width="187" height="38"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="33"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="prettyGene" translatesAutoresizingMaskIntoConstraints="NO" id="ZeB-SS-msL">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qf2-M0-9mx">
+                                <rect key="frame" x="10" y="223" width="394" height="110"/>
+                                <string key="text">Gene Oracle is an app used to create human characteristic profiles and match them up to find the genetic probabilities of offspring.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="KQZ-1w-vlD" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="10" id="54a-N3-w4Q"/>
+                            <constraint firstAttribute="trailing" secondItem="ZeB-SS-msL" secondAttribute="trailing" id="Fij-XL-X8v"/>
+                            <constraint firstItem="qf2-M0-9mx" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" constant="10" id="Ndh-q1-gHZ"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="ZeB-SS-msL" secondAttribute="bottom" id="Rzh-9l-Ks0"/>
+                            <constraint firstItem="qf2-M0-9mx" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" constant="-90" id="TVv-0T-9OQ"/>
+                            <constraint firstAttribute="trailing" secondItem="qf2-M0-9mx" secondAttribute="trailing" constant="10" id="XkK-ck-moY"/>
+                            <constraint firstItem="ZeB-SS-msL" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="bQA-KP-uND"/>
+                            <constraint firstItem="ZeB-SS-msL" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" id="nMY-Ud-o8x"/>
                             <constraint firstItem="KQZ-1w-vlD" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="uOs-DD-Kn3"/>
                         </constraints>
                     </view>
@@ -39,18 +56,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="-308"/>
+            <point key="canvasLocation" x="131.8840579710145" y="-308.1521739130435"/>
         </scene>
         <!--View Profiles-->
         <scene sceneID="u3x-gh-C1K">
             <objects>
                 <tableViewController id="OXy-Bs-mpl" customClass="Third" customModule="Carissa_Ward_and_Qili_Sui_Gene_Oracle" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="5yf-hL-i6t">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="qM3-hy-mcS">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="74"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="74"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textAttributes key="titleTextAttributes">
                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
@@ -62,14 +79,14 @@
                         </navigationBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="basic" textLabel="k5j-Gt-YdR" style="IBUITableViewCellStyleDefault" id="h6h-P2-4Fz">
-                                <rect key="frame" x="0.0" y="102" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="102" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="h6h-P2-4Fz" id="g8D-oB-ITv">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="k5j-Gt-YdR">
-                                            <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                            <rect key="frame" x="15" y="0.0" width="384" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                             <nil key="textColor"/>
@@ -95,11 +112,11 @@
             <objects>
                 <tableViewController id="LgG-Nx-7C8" customClass="Forth" customModule="Carissa_Ward_and_Qili_Sui_Gene_Oracle" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="pdu-iC-goj">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="bKj-Cd-CoG">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="74"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="74"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textAttributes key="titleTextAttributes">
                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
@@ -117,14 +134,14 @@
                         </navigationBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="basic" textLabel="zFR-xe-vWM" style="IBUITableViewCellStyleDefault" id="nI2-3h-FBQ">
-                                <rect key="frame" x="0.0" y="102" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="102" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nI2-3h-FBQ" id="ew8-UV-6QK">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zFR-xe-vWM">
-                                            <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                            <rect key="frame" x="15" y="0.0" width="384" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                             <nil key="textColor"/>
@@ -154,19 +171,19 @@
                         <viewControllerLayoutGuide type="bottom" id="CZg-7b-4lg"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fc0-FL-uGJ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Child Statistics" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="ySM-uO-IiU">
-                                <rect key="frame" x="79.5" y="30" width="216.5" height="38"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="98.666666666666686" y="30" width="217" height="38"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="33"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gmc-bn-de3">
-                                <rect key="frame" x="170" y="455" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gmc-bn-de3">
+                                <rect key="frame" x="10" y="32" width="40" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
                                     <action selector="back:" destination="lAS-XU-nnC" eventType="touchUpInside" id="YqV-pw-ptc"/>
@@ -176,13 +193,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ySM-uO-IiU" firstAttribute="centerX" secondItem="fc0-FL-uGJ" secondAttribute="centerX" id="Arp-bN-U36"/>
+                            <constraint firstItem="Gmc-bn-de3" firstAttribute="leading" secondItem="fc0-FL-uGJ" secondAttribute="leading" constant="10" id="M94-pU-NBG"/>
                             <constraint firstItem="ySM-uO-IiU" firstAttribute="top" secondItem="GT4-jo-USj" secondAttribute="bottom" constant="10" id="RNX-Eu-ecV"/>
+                            <constraint firstItem="ySM-uO-IiU" firstAttribute="centerY" secondItem="Gmc-bn-de3" secondAttribute="centerY" id="pns-Qr-ayn"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hhL-Pt-k8w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="903" y="486"/>
+            <point key="canvasLocation" x="901.60000000000002" y="485.30734632683664"/>
         </scene>
         <!--Create Profile-->
         <scene sceneID="wg7-f3-ORb">
@@ -193,12 +212,12 @@
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Proflie Creator" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="81" y="30" width="213" height="38"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="100.66666666666669" y="30" width="213" height="38"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="33"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -243,5 +262,6 @@
         <image name="Main" width="32" height="33"/>
         <image name="Select" width="32" height="32"/>
         <image name="View" width="32" height="33"/>
+        <image name="prettyGene" width="536" height="1200"/>
     </resources>
 </document>

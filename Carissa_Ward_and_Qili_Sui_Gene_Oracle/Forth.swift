@@ -12,7 +12,9 @@ class Forth: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        let blueColor = UIColor(red: 140/255.0, green: 206/255.0, blue: 225/255.0, alpha: 1.0)
+        view.backgroundColor = blueColor
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

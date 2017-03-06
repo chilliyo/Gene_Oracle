@@ -10,6 +10,7 @@ import UIKit
 
 class Fifth: UIViewController {
     
+    @IBOutlet weak var qili_test: UILabel!
     
     @IBAction func back(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)

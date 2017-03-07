@@ -31,23 +31,27 @@ class Third: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return profiles.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let profile = profiles[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: profile.type.rawValue, for: indexPath)
 
         // Configure the cell...
-
+        
+        cell.textLabel?.text = profile.name
+        cell.detailTextLabel?.text = profile.shortDescription
+        
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -55,7 +59,8 @@ class Third: UITableViewController {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-    */
+ */
+    
 
     /*
     // Override to support editing the table view.

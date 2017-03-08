@@ -47,7 +47,7 @@ class Forth: UITableViewController {
         // Configure the cell...
         
         cell.textLabel?.text = profile.name
-        cell.detailTextLabel?.text = profile.shortDescription
+        cell.detailTextLabel?.text = profile.bloodType
         
         return cell
     }

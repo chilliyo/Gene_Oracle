@@ -11,17 +11,23 @@ import UIKit
 class FirstViewController: UIViewController {
 
 
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        profiles.append(    Profile(
+            name:       "Mac",
+            bloodType:  "O",
+            scd:        false,
+            hd:         false,
+            cf:         false
+        ))
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
 

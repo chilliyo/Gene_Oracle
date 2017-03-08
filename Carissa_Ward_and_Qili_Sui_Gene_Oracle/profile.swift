@@ -8,31 +8,52 @@
 
 import Foundation
 
-let profiles = [
-    
-    profile(name: "Carissa Ward",
-         type: .basic,
-         shortDescription: "Born 1995"),
-    
-    profile(name: "Qili Sui",
-            type: .basic,
-            shortDescription: "Born 1994")
-]
-
-class profile {
+class Profile {
     
     enum `Type`: String {
         case basic = "basic"
     }
     
-    var name: String
-    var type: Type
-    var shortDescription: String
+    var type:       Type = .basic
     
-    init(name: String, type: Type, shortDescription: String) {
+    var name:       String
+    var bloodType:  String
+    var scd:        Bool
+    var hd:         Bool
+    var cf:         Bool
+    
+    init(name: String, bloodType: String, scd: Bool, hd: Bool, cf:Bool) {
         self.name = name
-        self.type = type
-        self.shortDescription = shortDescription
+        self.bloodType = bloodType
+        self.scd = scd
+        self.hd = hd
+        self.cf = cf
     }
     
 }
+
+var profiles = [
+    
+    Profile(
+        name:       "Carissa Ward",
+        bloodType:  "O",
+        scd:        false,
+        hd:         false,
+        cf:         false
+    ),
+    
+    Profile(name: "Qili Sui",
+        bloodType:  "O",
+        scd:        false,
+        hd:         false,
+        cf:         false
+    )
+]
+
+var max = Profile(
+    name:       "Maxie Ward",
+    bloodType:  "A",
+    scd:        false,
+    hd:         true,
+    cf:         false
+)

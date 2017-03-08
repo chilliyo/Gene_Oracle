@@ -18,6 +18,7 @@
 		D9B0CA111E6CDF2D0001CCBF /* Fifth.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B0CA101E6CDF2D0001CCBF /* Fifth.swift */; };
 		E733A15D1E6CF06F00161C16 /* Third.swift in Sources */ = {isa = PBXBuildFile; fileRef = E733A15C1E6CF06F00161C16 /* Third.swift */; };
 		E733A15F1E6CF09100161C16 /* Forth.swift in Sources */ = {isa = PBXBuildFile; fileRef = E733A15E1E6CF09100161C16 /* Forth.swift */; };
+		E733A1611E6E355D00161C16 /* profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E733A1601E6E355D00161C16 /* profile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		D9B0CA101E6CDF2D0001CCBF /* Fifth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fifth.swift; sourceTree = "<group>"; };
 		E733A15C1E6CF06F00161C16 /* Third.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Third.swift; sourceTree = "<group>"; };
 		E733A15E1E6CF09100161C16 /* Forth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Forth.swift; sourceTree = "<group>"; };
+		E733A1601E6E355D00161C16 /* profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = profile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				E733A15C1E6CF06F00161C16 /* Third.swift */,
 				D9B0CA101E6CDF2D0001CCBF /* Fifth.swift */,
 				D9B0C9E51E6CD9F70001CCBF /* Assets.xcassets */,
+				E733A1601E6E355D00161C16 /* profile.swift */,
 				D9B0C9E71E6CD9F70001CCBF /* LaunchScreen.storyboard */,
 				D9B0C9EA1E6CD9F70001CCBF /* Info.plist */,
 			);
@@ -275,6 +278,7 @@
 				D9B0C9E11E6CD9F70001CCBF /* SecondViewController.swift in Sources */,
 				D9B0CA111E6CDF2D0001CCBF /* Fifth.swift in Sources */,
 				D9B0C9DD1E6CD9F70001CCBF /* AppDelegate.swift in Sources */,
+				E733A1611E6E355D00161C16 /* profile.swift in Sources */,
 				D9B0C9DF1E6CD9F70001CCBF /* FirstViewController.swift in Sources */,
 				E733A15F1E6CF09100161C16 /* Forth.swift in Sources */,
 			);

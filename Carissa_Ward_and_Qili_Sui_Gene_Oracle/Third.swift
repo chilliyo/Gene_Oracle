@@ -24,6 +24,9 @@ class Third: UITableViewController {
             cf:         true
         ))
     }
+    override func viewWillAppear(_ animated: Bool) {
+        self.tableView.reloadData()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

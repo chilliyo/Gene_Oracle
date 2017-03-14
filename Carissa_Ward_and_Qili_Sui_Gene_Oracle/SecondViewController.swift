@@ -64,7 +64,12 @@ class SecondViewController: UIViewController {
         view.backgroundColor = greenColor
     }
 
-
+    override func viewWillDisappear(_ animated: Bool) {
+        name.text = ""
+        for button in bloodTypes{
+            button.backgroundColor = UIColor(white: 1, alpha: 0.0)
+        }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

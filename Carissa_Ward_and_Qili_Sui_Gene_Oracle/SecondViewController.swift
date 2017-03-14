@@ -25,6 +25,23 @@ class SecondViewController: UIViewController {
     @IBOutlet var cfStatus: [UIButton]!
 
     @IBAction func changeToBlue(_ sender: UIButton) {
+        if (bloodTypes.contains(sender)) {
+            for button in bloodTypes{
+                button.backgroundColor = UIColor(white: 1, alpha: 0.0)
+            }
+        }else if scdStatus.contains(sender){
+            for button in scdStatus{
+                button.backgroundColor = UIColor(white: 1, alpha: 0.0)
+            }
+        }else if hdStatus.contains(sender){
+            for button in hdStatus{
+                button.backgroundColor = UIColor(white: 1, alpha: 0.0)
+            }
+        }else{
+            for button in cfStatus{
+                button.backgroundColor = UIColor(white: 1, alpha: 0.0)
+            }
+        }
         sender.backgroundColor = blueColor
     }
     
@@ -91,10 +108,6 @@ class SecondViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = greenColor
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
-
     }
     
     override func didReceiveMemoryWarning() {

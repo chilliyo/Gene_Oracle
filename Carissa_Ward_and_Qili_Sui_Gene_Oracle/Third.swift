@@ -16,13 +16,6 @@ class Third: UITableViewController {
         let blueColor = UIColor(red: 140/255.0, green: 206/255.0, blue: 225/255.0, alpha: 1.0)
         view.backgroundColor = blueColor
         
-        profiles.append(    Profile(
-            name:       "Mac",
-            bloodType:  "O",
-            scd:        true,
-            hd:         true,
-            cf:         true
-        ))
     }
     override func viewWillAppear(_ animated: Bool) {
         self.tableView.reloadData()
@@ -70,7 +63,7 @@ class Third: UITableViewController {
     func alert(with profile: Profile){
         let name = profile.name
         let bloodType = profile.bloodType
-        var message = "Name: " + name + "\nBloodType:" + bloodType
+        var message = "Name: " + name + "\nBloodType: " + bloodType
         if (profile.cf == true){message.append("\n Afflicted with Cystic Fibrosis")}
         if (profile.hd == true){message.append("\n Afflicted with Huntington's Disease")}
         if (profile.scd == true){message.append("\n Afflicted with Sickle Cell Disease")}

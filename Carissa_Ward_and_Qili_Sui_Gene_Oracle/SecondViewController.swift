@@ -31,19 +31,34 @@ class SecondViewController: UIViewController {
     @IBAction func createProfile(_ sender: UIButton) {
         let sendName = name.text ?? "failed"
         let sendBT = whichIsSelected(in: bloodTypes)
+        let sendSCD = whichIsSelected(in: scdStatus)
+        let sendHD = whichIsSelected(in: hdStatus)
+        let sendCF = whichIsSelected(in: cfStatus)
         
-        if (sendName == "failed" || sendBT == "failed"){
-            ///do nothing for now
+        if (sendName == ""){
+            alert(displayMessage: "Please enter name to identify this profile.")
+        }
+        else if (sendName == "failed" || sendBT == "failed" || sendSCD == "failed" || sendHD == "failed" || sendCF == "failed"){
+            alert(displayMessage: "Make sure you have a selection for each trait.")
         } else {
             profiles.append(Profile(
                 name:       sendName,
                 bloodType:  sendBT,
-                scd:        false,
-                hd:         false,
-                cf:         false
+                scd:        sendSCD == "Afflicted" ? true : false,
+                hd:         sendHD == "Afflicted" ? true : false,
+                cf:         sendCF == "Afflicted" ? true : false
             ))
         }
     }
+    
+    func alert(displayMessage m : String){
+        let message = m
+        let alertController = UIAlertController(title: "Invalid Selection", message: message, preferredStyle: .alert)
+        let okayAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
+        alertController.addAction(okayAction)
+        present(alertController, animated: true, completion: nil)
+    }
+    
     
     func whichIsSelected(in traitList:[UIButton]) -> String {
         for status in traitList{
@@ -54,7 +69,21 @@ class SecondViewController: UIViewController {
         return "failed"
     }
     
-    
+    @IBAction func clearFields(_ sender: UIButton) {
+        name.text = ""
+        for button in bloodTypes{
+            button.backgroundColor = UIColor(white: 1, alpha: 0.0)
+        }
+        for button in scdStatus{
+            button.backgroundColor = UIColor(white: 1, alpha: 0.0)
+        }
+        for button in hdStatus{
+            button.backgroundColor = UIColor(white: 1, alpha: 0.0)
+        }
+        for button in cfStatus{
+            button.backgroundColor = UIColor(white: 1, alpha: 0.0)
+        }
+    }
     
     @IBAction func editEnded(_ sender: UITextField) { sender.resignFirstResponder()
     }
@@ -65,10 +94,7 @@ class SecondViewController: UIViewController {
     }
 
     override func viewWillDisappear(_ animated: Bool) {
-        name.text = ""
-        for button in bloodTypes{
-            button.backgroundColor = UIColor(white: 1, alpha: 0.0)
-        }
+
     }
     
     override func didReceiveMemoryWarning() {

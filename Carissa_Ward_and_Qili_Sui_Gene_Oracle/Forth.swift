@@ -9,7 +9,10 @@
 import UIKit
 
 class Forth: UITableViewController {
-
+    var selectedCellIndexPath: NSIndexPath?
+    var SelectedCellHeight = CGFloat() // currently set to 480.0 tableView height
+    var UnselectedCellHeight = CGFloat() // currently set to 300.0 tableView unselected hight
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -55,7 +58,6 @@ class Forth: UITableViewController {
         
         return cell
     }
-    
     
     /*
      // Override to support conditional editing of the table view.

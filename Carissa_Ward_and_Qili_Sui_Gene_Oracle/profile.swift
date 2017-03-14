@@ -49,12 +49,3 @@ var profiles = [
         cf:         false
     )
 ]
-
-//for testing
-var max = Profile(
-    name:       "Maxie Ward",
-    bloodType:  "A",
-    scd:        false,
-    hd:         true,
-    cf:         false
-)

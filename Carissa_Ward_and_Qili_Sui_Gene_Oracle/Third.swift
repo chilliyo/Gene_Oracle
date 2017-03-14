@@ -15,11 +15,14 @@ class Third: UITableViewController {
         
         let blueColor = UIColor(red: 140/255.0, green: 206/255.0, blue: 225/255.0, alpha: 1.0)
         view.backgroundColor = blueColor
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        profiles.append(    Profile(
+            name:       "Mac",
+            bloodType:  "O",
+            scd:        true,
+            hd:         true,
+            cf:         true
+        ))
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,14 +57,24 @@ class Third: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let profile = profiles[indexPath.row]
+        
+        alert(with: profile)
+        
+        
+        self.tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func alert(with profile: Profile){
         let name = profile.name
         let bloodType = profile.bloodType
-        let message = "Name: " + name + "\nBloodType:" + bloodType
+        var message = "Name: " + name + "\nBloodType:" + bloodType
+        if (profile.cf == true){message.append("\n Afflicted with Cystic Fibrosis")}
+        if (profile.hd == true){message.append("\n Afflicted with Huntington's Disease")}
+        if (profile.scd == true){message.append("\n Afflicted with Sickle Cell Disease")}
         let alertController = UIAlertController(title: name, message: message, preferredStyle: .alert)
         let okayAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
         alertController.addAction(okayAction)
         present(alertController, animated: true, completion: nil)
-        self.tableView.deselectRow(at: indexPath, animated: true)
     }
 
     /*

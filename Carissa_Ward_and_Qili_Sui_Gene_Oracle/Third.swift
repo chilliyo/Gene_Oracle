@@ -52,6 +52,17 @@ class Third: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let profile = profiles[indexPath.row]
+        let name = profile.name
+        let bloodType = profile.bloodType
+        let message = "Name: " + name + "\nBloodType:" + bloodType
+        let alertController = UIAlertController(title: name, message: message, preferredStyle: .alert)
+        let okayAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
+        alertController.addAction(okayAction)
+        present(alertController, animated: true, completion: nil)
+        self.tableView.deselectRow(at: indexPath, animated: true)
+    }
 
     /*
     // Override to support conditional editing of the table view.

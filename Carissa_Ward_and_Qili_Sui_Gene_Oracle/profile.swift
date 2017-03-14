@@ -50,6 +50,7 @@ var profiles = [
     )
 ]
 
+//for testing
 var max = Profile(
     name:       "Maxie Ward",
     bloodType:  "A",

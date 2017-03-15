@@ -99,13 +99,27 @@ class Forth: UITableViewController {
         //self.tableView.deselectRow(at: indexPath, animated: true)
         
 
+    
+    }
+    
+    func calculateChildStatistics(_ sender: UIBarButtonItem) {
+        //put code here that will
     }
     override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)        
         if (!((cell?.isSelected)!)) {
             cell?.accessoryType = UITableViewCellAccessoryType.none
         }
+    
+    }
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
+        if let Fifth = segue.destination as? Fifth {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                Fifth.parent1 = profiles[indexPath.row]
+                Fifth.parent2 = profiles[1]//what needs to go here?
+            }
+        }
     }
 //    
 //    -tableView:didDeselectRowAtIndexPath

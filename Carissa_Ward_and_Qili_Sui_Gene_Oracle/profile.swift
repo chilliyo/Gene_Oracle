@@ -32,35 +32,4 @@ class Profile {
     
 }
 
-var profiles = [
-    
-    Profile(
-        name:       "Alex",
-        bloodType:  "A",
-        scd:        true,
-        hd:         true,
-        cf:         false
-    ),
-    
-    Profile(name: "Sam",
-        bloodType:  "B",
-        scd:        false,
-        hd:         false,
-        cf:         false
-    ),
-    Profile(
-        name:       "Donlad Trump",
-        bloodType:  "AB",
-        scd:        true,
-        hd:         true,
-        cf:         true
-    ),
-    
-    Profile(name: "Hilary Cliton",
-            bloodType:  "B",
-            scd:        false,
-            hd:         true,
-            cf:         false
-    )
-
-]
+var profiles = [Profile]()

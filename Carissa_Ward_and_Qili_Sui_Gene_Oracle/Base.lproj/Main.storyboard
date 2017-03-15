@@ -48,7 +48,7 @@
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OHp-E5-3Qn">
                                         <rect key="frame" x="0.0" y="20.5" width="158" height="143.5"/>
-                                        <string key="text">In the upper left there is a normal blood cell and below it is a sickle blood cell. They can clog blood vessels. They die fast causing a blood shortage.
+                                        <string key="text">To the left there is a normal blood cell and below it is a sickle blood cell. They can clog blood vessels. They die fast causing a blood shortage.
 </string>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="textColor"/>

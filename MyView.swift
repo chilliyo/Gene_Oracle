@@ -10,24 +10,25 @@ import UIKit
 
 class MyView: UIView {
 
+    //Draws images on the Disease Information screen
     override func draw(_ rect: CGRect) {
         // Drawing code
         
         if let context = UIGraphicsGetCurrentContext() {
-            //nebative
+            
+            //defines reused colors
+            //negative
             let blueColor = UIColor(red: 140/255.0, green: 206/255.0, blue: 225/255.0, alpha: 1.0).cgColor
             //positive
             let greenColor = UIColor(red: 197/255.0, green: 225/255.0, blue: 169/255.0, alpha: 1.0).cgColor
-            
             let darkRedColor = UIColor(red: 225/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1.0).cgColor
-            
             let redColor = UIColor.red.cgColor
             
             
             
             
             
-            // Drawing blood Cell
+            // Draws normal blood Cell
             context.setStrokeColor(redColor)
             context.setFillColor(darkRedColor)
             context.setLineDash(phase:0, lengths: [])
@@ -40,7 +41,7 @@ class MyView: UIView {
             
             
             
-            // Drawing the Sickle Cell
+            //Draws a Sickle Cell
             context.setLineWidth(10)
             
             context.setStrokeColor(darkRedColor)
@@ -70,10 +71,11 @@ class MyView: UIView {
             
             
             
+            //The following draws the lines for the hereditary diagrams
             context.setLineWidth(1)
             context.setStrokeColor(UIColor.black.cgColor)
             
-            
+            //Huntington's disease's
             context.move(to: CGPoint(x: 50, y: 310)); context.addLine(to: CGPoint(x: 95, y: 310)); context.strokePath()
             context.move(to: CGPoint(x: 80, y: 310)); context.addLine(to: CGPoint(x: 80, y: 340)); context.strokePath()
             context.move(to: CGPoint(x: 20, y: 340)); context.addLine(to: CGPoint(x: 140, y: 340)); context.strokePath()
@@ -82,7 +84,7 @@ class MyView: UIView {
             context.move(to: CGPoint(x: 100, y: 340)); context.addLine(to: CGPoint(x: 100, y: 370)); context.strokePath()
             context.move(to: CGPoint(x: 140, y: 340)); context.addLine(to: CGPoint(x: 140, y: 370)); context.strokePath()
 
-            
+            //Cystic Fibrosis's
             context.move(to: CGPoint(x: 50, y: 430)); context.addLine(to: CGPoint(x: 95, y: 430)); context.strokePath()
             context.move(to: CGPoint(x: 80, y: 460)); context.addLine(to: CGPoint(x: 80, y: 430)); context.strokePath()
             context.move(to: CGPoint(x: 20, y: 460)); context.addLine(to: CGPoint(x: 140, y: 460)); context.strokePath()
@@ -92,6 +94,7 @@ class MyView: UIView {
             context.move(to: CGPoint(x: 140, y: 460)); context.addLine(to: CGPoint(x: 140, y: 490)); context.strokePath()
             
             
+            //Encapsulates the creation of the square which represents people in the hereditary diagrams.
             func createSquare(row: Int, column: Int, outside: CGColor, inside: CGColor){
                 
                 context.setStrokeColor(outside)
@@ -126,8 +129,6 @@ class MyView: UIView {
             createSquare(row: 3, column: 1, outside: blueColor, inside:greenColor)
             createSquare(row: 3, column: 2, outside: blueColor, inside:greenColor)
             createSquare(row: 3, column: 3, outside: blueColor, inside:blueColor)
-            
-            
         }
     }
 

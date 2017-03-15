@@ -9,6 +9,10 @@
 import UIKit
 
 class Forth: UITableViewController {
+    
+    
+    
+    
     var selectedCellIndexPath: NSIndexPath?
     var SelectedCellHeight = CGFloat() // currently set to 480.0 tableView height
     var UnselectedCellHeight = CGFloat() // currently set to 300.0 tableView unselected hight
@@ -59,6 +63,37 @@ class Forth: UITableViewController {
         return cell
     }
     
+    
+    
+    
+    
+    @IBAction func calculateChildStatistics(_ sender: UIBarButtonItem) {
+        //put code here that will
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let Fifth = segue.destination as? Fifth {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                Fifth.parent1 = profiles[indexPath.row]
+                Fifth.parent2 = profiles[1]//what needs to go here?
+            }
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     /*
      // Override to support conditional editing of the table view.
      override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -92,16 +127,6 @@ class Forth: UITableViewController {
      override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
      // Return false if you do not want the item to be re-orderable.
      return true
-     }
-     */
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
      }
      */
     

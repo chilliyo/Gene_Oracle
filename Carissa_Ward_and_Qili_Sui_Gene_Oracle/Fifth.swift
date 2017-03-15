@@ -10,11 +10,26 @@ import UIKit
 
 class Fifth: UIViewController {
     
-
+    var parent1: Profile?
+    var parent2: Profile?
+    
+    @IBOutlet weak var childname: UILabel!
+    
     @IBAction func back(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        if let p1 = parent1{
+            if let p2 = parent2{
+                childname.text = "\(p1.name)  and  \(p2.name)'s child."
+                
+                
+                
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,7 +42,6 @@ class Fifth: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
     /*
     // MARK: - Navigation
 

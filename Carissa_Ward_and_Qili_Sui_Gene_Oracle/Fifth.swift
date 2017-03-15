@@ -18,6 +18,12 @@ class Fifth: UIViewController {
     @IBOutlet weak var typeB: UILabel!
     @IBOutlet weak var typeAB: UILabel!
     @IBOutlet weak var typeO: UILabel!
+    @IBOutlet weak var scdAfflicted: UILabel!
+    @IBOutlet weak var scdHealthy: UILabel!
+    @IBOutlet weak var hdAfflicted: UILabel!
+    @IBOutlet weak var hdHealthy: UILabel!
+    @IBOutlet weak var cfAfflicted: UILabel!
+    @IBOutlet weak var cfHealthy: UILabel!
     
     @IBAction func back(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
@@ -27,7 +33,7 @@ class Fifth: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         if let p1 = parent1{
             if let p2 = parent2{
-                childname.text = "\(p1.name)  and  \(p2.name)'s child."
+                childname.text = "\(p1.name) and \(p2.name)'s child."
                 
                 switch p1.bloodType {
                 case "A": switch p2.bloodType{
@@ -57,6 +63,36 @@ class Fifth: UIViewController {
                 default: break
                 }
                 
+                if (p1.scd && p2.scd){
+                    scdAfflicted.text = "100%"
+                }else if (!p1.scd && !p2.scd){
+                    scdAfflicted.text = ".0025%"
+                    scdHealthy.text = "99.9975%"
+                }else{//p1 has it and p2 doesn't, or p2 has it and p1 doesn't
+                    scdAfflicted.text = ".5%"
+                    scdHealthy.text = "99.5%"
+                }
+                
+                if (p1.hd && p2.hd){
+                    hdAfflicted.text = "75%"
+                    hdHealthy.text = "25%"
+                }else if (!p1.hd && !p2.hd){
+                    hdHealthy.text = "100%"
+                }else{//p1 has it and p2 doesn't, or p2 has it and p1 doesn't
+                    hdAfflicted.text = "50%"
+                    hdHealthy.text = "50%"
+                }
+                
+                
+                if (p1.cf && p2.cf){
+                    cfAfflicted.text = "100%"
+                }else if (!p1.scd && !p2.scd){
+                    cfAfflicted.text = ".0625%"
+                    cfHealthy.text = "99.9375%"
+                }else{//p1 has it and p2 doesn't, or p2 has it and p1 doesn't
+                    cfAfflicted.text = "2.5%"
+                    cfHealthy.text = "97.5%"
+                }
             }
         }
     }

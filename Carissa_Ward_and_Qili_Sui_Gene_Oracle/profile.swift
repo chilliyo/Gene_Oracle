@@ -36,14 +36,14 @@ var profiles = [
     
     Profile(
         name:       "Carissa Ward",
-        bloodType:  "O",
+        bloodType:  "A",
         scd:        false,
         hd:         false,
         cf:         false
     ),
     
     Profile(name: "Qili Sui",
-        bloodType:  "O",
+        bloodType:  "B",
         scd:        false,
         hd:         false,
         cf:         false

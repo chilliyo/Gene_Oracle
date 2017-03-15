@@ -89,7 +89,7 @@ class Fifth: UIViewController {
                 //Determine probability of Cystic Fibrosis
                 if (p1.cf && p2.cf){
                     cfAfflicted.text = "100%"
-                }else if (!p1.scd && !p2.scd){
+                }else if (!p1.cf && !p2.cf){
                     cfAfflicted.text = ".0625%"
                     cfHealthy.text = "99.9375%"
                 }else{//p1 has it and p2 doesn't, or p2 has it and p1 doesn't

@@ -102,9 +102,8 @@ class Forth: UITableViewController {
     
     }
     
-    func calculateChildStatistics(_ sender: UIBarButtonItem) {
-        //put code here that will
-    }
+
+
     override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)        
         if (!((cell?.isSelected)!)) {

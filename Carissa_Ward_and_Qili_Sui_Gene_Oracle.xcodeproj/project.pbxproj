@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D971EC391E7901FD006F983D /* MyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D971EC381E7901FD006F983D /* MyView.swift */; };
 		D9B0C9DD1E6CD9F70001CCBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B0C9DC1E6CD9F70001CCBF /* AppDelegate.swift */; };
 		D9B0C9DF1E6CD9F70001CCBF /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B0C9DE1E6CD9F70001CCBF /* FirstViewController.swift */; };
 		D9B0C9E11E6CD9F70001CCBF /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B0C9E01E6CD9F70001CCBF /* SecondViewController.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D971EC381E7901FD006F983D /* MyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyView.swift; path = ../MyView.swift; sourceTree = "<group>"; };
 		D9B0C9D91E6CD9F70001CCBF /* Carissa_Ward_and_Qili_Sui_Gene_Oracle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Carissa_Ward_and_Qili_Sui_Gene_Oracle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9B0C9DC1E6CD9F70001CCBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9B0C9DE1E6CD9F70001CCBF /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				D9B0C9DC1E6CD9F70001CCBF /* AppDelegate.swift */,
+				D971EC381E7901FD006F983D /* MyView.swift */,
 				D9B0C9DE1E6CD9F70001CCBF /* FirstViewController.swift */,
 				D9B0C9E01E6CD9F70001CCBF /* SecondViewController.swift */,
 				D9B0C9E21E6CD9F70001CCBF /* Main.storyboard */,
@@ -274,6 +277,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D971EC391E7901FD006F983D /* MyView.swift in Sources */,
 				E733A15D1E6CF06F00161C16 /* Third.swift in Sources */,
 				D9B0C9E11E6CD9F70001CCBF /* SecondViewController.swift in Sources */,
 				D9B0CA111E6CDF2D0001CCBF /* Fifth.swift in Sources */,

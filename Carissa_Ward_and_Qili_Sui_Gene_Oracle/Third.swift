@@ -10,12 +10,19 @@ import UIKit
 
 class Third: UITableViewController {
 
+    
+    var customNSIndexPath = NSIndexPath()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let blueColor = UIColor(red: 140/255.0, green: 206/255.0, blue: 225/255.0, alpha: 1.0)
         view.backgroundColor = blueColor
         
+        let doubleTap = UITapGestureRecognizer(target: self, action:#selector(doubleTap(tap:)))
+        doubleTap.numberOfTapsRequired = 2
+        doubleTap.numberOfTouchesRequired = 1
+        self.tableView.addGestureRecognizer(doubleTap)
     }
     override func viewWillAppear(_ animated: Bool) {
         self.tableView.reloadData()
@@ -47,17 +54,24 @@ class Third: UITableViewController {
         
         cell.textLabel?.text = profile.name
         cell.detailTextLabel?.text = profile.bloodType
+
+
         
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let profile = profiles[indexPath.row]
-        
-        alert(with: profile)
-        
-        
+        customNSIndexPath = indexPath as NSIndexPath
         self.tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func doubleTap(tap: UITapGestureRecognizer) {
+        let point: CGPoint = tap.location(in: self.tableView)
+        if let indexPath = self.tableView.indexPathForRow(at: point) {
+            print("Double Tap")
+            let profile = profiles[indexPath.row]
+            alert(with: profile)
+        }
     }
     
     func alert(with profile: Profile){
@@ -71,8 +85,9 @@ class Third: UITableViewController {
         let okayAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
         alertController.addAction(okayAction)
         present(alertController, animated: true, completion: nil)
+        
     }
-
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

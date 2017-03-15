@@ -10,11 +10,57 @@ import UIKit
 
 class Fifth: UIViewController {
     
-
+    var parent1: Profile?
+    var parent2: Profile?
+    
+    @IBOutlet weak var childname: UILabel!
+    @IBOutlet weak var typeA: UILabel!
+    @IBOutlet weak var typeB: UILabel!
+    @IBOutlet weak var typeAB: UILabel!
+    @IBOutlet weak var typeO: UILabel!
+    
     @IBAction func back(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
 
+    //I thought there would be a way to calculate the punnett squares programatically, but there really isn't. It had to be hardcoded.
+    override func viewWillAppear(_ animated: Bool) {
+        if let p1 = parent1{
+            if let p2 = parent2{
+                childname.text = "\(p1.name)  and  \(p2.name)'s child."
+                
+                switch p1.bloodType {
+                case "A": switch p2.bloodType{
+                        case "A": typeA.text = "81.64%"; typeO.text = "18.36%"
+                        case "B": typeA.text = "25.35%"; typeB.text = "23.84%"; typeAB.text = "31.79%"; typeO.text = "19.01%"
+                        case "AB": typeA.text = "50.00%"; typeB.text = "21.43%"; typeAB.text = "28.57%"
+                        case "O": typeA.text = "57.14%"; typeO.text = "42.86%"
+                        default: break}
+                case "B":switch p2.bloodType{
+                        case "A": typeA.text = "25.35%"; typeB.text = "23.84%"; typeAB.text = "31.79%"; typeO.text = "19.01%"
+                        case "B":typeB.text = "80.3%"; typeO.text = "19.7%"
+                        case "AB": typeA.text = "22.18%"; typeB.text = "50%"; typeAB.text = "27.82%"
+                        case "O": typeB.text = "55.62%"; typeO.text = "44.38%"
+                        default: break}
+                case "AB":switch p2.bloodType{
+                        case "A": typeA.text = "50.00%"; typeB.text = "21.43%"; typeAB.text = "28.57%"
+                        case "B": typeA.text = "22.18%"; typeB.text = "50%"; typeAB.text = "27.82%"
+                        case "AB": typeA.text = "25%"; typeB.text = "25%"; typeAB.text = "50%"
+                        case "O": typeA.text = "50%"; typeB.text = "50%"
+                        default: break}
+                case "O":switch p2.bloodType{
+                        case "A": typeA.text = "57.14%"; typeO.text = "42.86%"
+                        case "B": typeB.text = "55.62%"; typeO.text = "44.38%"
+                        case "AB": typeA.text = "50%"; typeB.text = "50%"
+                        case "O": typeO.text = "100%"
+                        default: break}
+                default: break
+                }
+                
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,7 +73,6 @@ class Fifth: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
     /*
     // MARK: - Navigation
 

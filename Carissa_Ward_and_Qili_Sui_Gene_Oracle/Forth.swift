@@ -9,15 +9,15 @@
 import UIKit
 
 class Forth: UITableViewController {
-    var selectedCellIndexPath: NSIndexPath?
-    var SelectedCellHeight = CGFloat() // currently set to 480.0 tableView height
-    var UnselectedCellHeight = CGFloat() // currently set to 300.0 tableView unselected hight
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let blueColor = UIColor(red: 140/255.0, green: 206/255.0, blue: 225/255.0, alpha: 1.0)
         view.backgroundColor = blueColor
+        
+        
+        tableView.allowsMultipleSelection = true
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -53,12 +53,81 @@ class Forth: UITableViewController {
         
         // Configure the cell...
         
-        cell.textLabel?.text = profile.name
-        cell.detailTextLabel?.text = profile.bloodType
-        
+        if (cell.isSelected) {
+            cell.accessoryType = UITableViewCellAccessoryType.checkmark;
+            cell.textLabel?.text = profile.name
+            cell.detailTextLabel?.text = profile.bloodType
+        }else{
+            cell.accessoryType = UITableViewCellAccessoryType.none;
+            cell.textLabel?.text = profile.name
+            cell.detailTextLabel?.text = profile.bloodType
+        }
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //let profile = profiles[indexPath.row]
+        //let cell = tableView.dequeueReusableCell(withIdentifier: profile.type.rawValue, for: indexPath)
+        
+        let cell = tableView.cellForRow(at: indexPath)
+        
+        if (cell?.isSelected)! {
+            cell?.accessoryType = UITableViewCellAccessoryType.checkmark
+//            cell.textLabel?.text = profile.name
+//            cell.detailTextLabel?.text = profile.bloodType
+            
+        } else {
+            cell?.accessoryType = UITableViewCellAccessoryType.none
+//            cell?.textLabel?.text = profile.name
+//            cell?.detailTextLabel?.text = profile.bloodType
+            
+        }
+       
+//        -tableView:didSelectRowAtIndexPath:
+//        
+//        UITableViewCell * cell = [tableView cellForRowAtIndexPath:indexPath];
+//        
+//        if (cell.selected) {
+//            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+//        }else{
+//            cell.accessoryType = UITableViewCellAccessoryNone;
+//        }
+        
+    
+        //alert(with: profile)
+        
+        //self.tableView.deselectRow(at: indexPath, animated: true)
+        
+
+    }
+    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath)        
+        if (!((cell?.isSelected)!)) {
+            cell?.accessoryType = UITableViewCellAccessoryType.none
+        }
+        
+    }
+//    
+//    -tableView:didDeselectRowAtIndexPath
+//    
+//    UITableViewCell * cell = [tableView cellForRowAtIndexPath:indexPath];
+//    
+//    if (!cell.selected) {
+//    cell.accessoryType = UITableViewCellAccessoryNone;
+//    }
+//    
+    func alert(with profile: Profile){
+        let name = profile.name
+        let bloodType = profile.bloodType
+        var message = "Name: " + name + "\nBloodType: " + bloodType
+        if (profile.cf == true){message.append("\n Afflicted with Cystic Fibrosis")}
+        if (profile.hd == true){message.append("\n Afflicted with Huntington's Disease")}
+        if (profile.scd == true){message.append("\n Afflicted with Sickle Cell Disease")}
+        let alertController = UIAlertController(title: name, message: message, preferredStyle: .alert)
+        let okayAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
+        alertController.addAction(okayAction)
+        present(alertController, animated: true, completion: nil)
+    }
     /*
      // Override to support conditional editing of the table view.
      override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

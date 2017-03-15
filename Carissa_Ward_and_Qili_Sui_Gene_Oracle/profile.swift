@@ -35,17 +35,17 @@ class Profile {
 var profiles = [
     
     Profile(
-        name:       "Carissa Ward",
+        name:       "Alex",
         bloodType:  "A",
-        scd:        false,
-        hd:         false,
+        scd:        true,
+        hd:         true,
         cf:         false
     ),
     
-    Profile(name: "Qili Sui",
+    Profile(name: "Sam",
         bloodType:  "B",
         scd:        false,
         hd:         false,
-        cf:         false
+        cf:         true
     )
 ]

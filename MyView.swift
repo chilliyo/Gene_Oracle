@@ -10,116 +10,125 @@ import UIKit
 
 class MyView: UIView {
 
+    //Draws images on the Disease Information screen
     override func draw(_ rect: CGRect) {
         // Drawing code
         
         if let context = UIGraphicsGetCurrentContext() {
             
-            // Drawing lines
-            context.move(to: CGPoint(x: 20, y: 40))
-            context.addLine(to: CGPoint(x: 120, y: 90))
-            context.strokePath()
+            //defines reused colors
+            //negative
+            let blueColor = UIColor(red: 140/255.0, green: 206/255.0, blue: 225/255.0, alpha: 1.0).cgColor
+            //positive
+            let greenColor = UIColor(red: 197/255.0, green: 225/255.0, blue: 169/255.0, alpha: 1.0).cgColor
+            let darkRedColor = UIColor(red: 225/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1.0).cgColor
+            let redColor = UIColor.red.cgColor
             
-            context.setLineWidth(4)
-            context.move(to: CGPoint(x: 60, y: 40))
-            context.addLine(to: CGPoint(x: 160, y: 90))
-            context.strokePath()
             
-            // dashed lines
-            let shortDash : [CGFloat] = [ 4, 4 ]
-            context.setLineDash(phase: 0, lengths: shortDash)
-            context.move(to: CGPoint(x: 100, y: 40))
-            context.addLine(to: CGPoint(x: 200, y: 90))
-            context.strokePath()
             
-            context.setLineWidth(2)
-            let longDash : [CGFloat] = [ 8, 2 ]
-            context.setLineDash(phase:0, lengths: longDash)
-            context.move(to: CGPoint(x: 140, y: 40))
-            context.addLine(to: CGPoint(x: 240, y: 90))
-            context.strokePath()
             
-            // Drawing ovals and circles
-            context.setStrokeColor(UIColor.blue.cgColor)
-            context.setFillColor(UIColor.red.cgColor)
+            
+            // Draws normal blood Cell
+            context.setStrokeColor(redColor)
+            context.setFillColor(darkRedColor)
             context.setLineDash(phase:0, lengths: [])
             
-            let rect1 = CGRect(x: 20, y: 100, width: 80, height: 60)
-            context.strokeEllipse(in: rect1)
+            context.setLineWidth(18)
+            let bloodCell = CGRect(x: 40, y: 100, width: 60, height: 60)
+            context.fillEllipse(in: bloodCell)
+            context.strokeEllipse(in: bloodCell)
+
             
-            context.setLineWidth(4)
-            let rect2 = CGRect(x: 120, y: 100, width: 80, height: 60)
-            context.fillEllipse(in: rect2)
-            context.strokeEllipse(in: rect2)
             
-            let rect3 = CGRect(x: 220, y: 100, width: 60, height: 60)
-            context.fillEllipse(in: rect3)
             
-            // Drawing rectangles and squares
-            context.setStrokeColor(UIColor.green.cgColor)
-            context.setFillColor(UIColor.yellow.cgColor)
-            context.setLineWidth(2)
+            //Draws a Sickle Cell
+            context.setLineWidth(10)
             
-            let rect4 = CGRect(x: 20, y: 180, width: 80, height: 60)
-            context.stroke(rect4)
-            
-            context.setLineWidth(4)
-            let rect5 = CGRect(x: 120, y: 180, width: 80, height: 60)
-            context.fill(rect5)
-            context.stroke(rect5)
-            
-            let rect6 = CGRect(x: 220, y: 180, width: 60, height: 60)
-            context.fill(rect6)
-            
-            // Drawing path
-            context.setStrokeColor(UIColor.blue.cgColor)
-            context.setLineWidth(2)
-            
-            context.move(to: CGPoint(x: 100, y: 250))
-            context.addLine(to: CGPoint(x: 150, y: 300))
-            context.addLine(to: CGPoint(x: 100, y: 350))
-            context.addLine(to: CGPoint(x: 50, y: 300))
-            context.closePath()
+            context.setStrokeColor(darkRedColor)
+            context.addArc(center: CGPoint(x: 26.5, y: 260.5),
+                           radius: 62.5,
+                           startAngle: 0,
+                           endAngle: CGFloat(M_PI / 0.62),
+                           clockwise: true)
+            context.strokePath()
+
+            context.setStrokeColor(redColor)
+            context.addArc(center: CGPoint(x: 43, y: 250),
+                           radius: 50,
+                           startAngle: CGFloat(M_PI / 6.0),
+                           endAngle: CGFloat(M_PI / 0.666),
+                           clockwise: true)
             context.strokePath()
             
-            // Drawing an arc
-            context.addArc(center: CGPoint(x: 250, y: 300),
-                           radius: 50,
-                           startAngle: 0,
-                           endAngle: CGFloat(M_PI),
+            context.setLineWidth(5)
+
+            context.addArc(center: CGPoint(x: 10, y: 271),
+                           radius: 75,
+                           startAngle: CGFloat(0 * M_PI / 6.0),
+                           endAngle: CGFloat(M_PI / 0.61),
                            clockwise: true)
             context.strokePath()
             
             
-            // Drawing a quadratic Bézier curve
-            context.move(to: CGPoint(x: 20, y: 350))
-            context.addQuadCurve(to: CGPoint(x: 170, y: 350),
-                                 control: CGPoint(x: 100, y: 450))
-            context.strokePath()
             
-            // Drawing a cubic Bézier curve
-            context.move(to: CGPoint(x: 170, y: 400))
-            context.addCurve(to: CGPoint(x: 320, y: 350),
-                             control1: CGPoint(x: 220, y: 420),
-                             control2: CGPoint(x: 270, y: 330))
-            context.strokePath()
+            //The following draws the lines for the hereditary diagrams
+            context.setLineWidth(1)
+            context.setStrokeColor(UIColor.black.cgColor)
             
-            // Drawing an image
-            if let image = UIImage(named: "Chicago") {
-                let rect = CGRect(x: 20, y: 420, width: 150, height: 100)
-                //image.draw(at: CGPoint(x: 20, y: 420))  // draw at full size
-                image.draw(in: rect)
+            //Huntington's disease's
+            context.move(to: CGPoint(x: 50, y: 310)); context.addLine(to: CGPoint(x: 95, y: 310)); context.strokePath()
+            context.move(to: CGPoint(x: 80, y: 310)); context.addLine(to: CGPoint(x: 80, y: 340)); context.strokePath()
+            context.move(to: CGPoint(x: 20, y: 340)); context.addLine(to: CGPoint(x: 140, y: 340)); context.strokePath()
+            context.move(to: CGPoint(x: 20, y: 340)); context.addLine(to: CGPoint(x: 20, y: 370)); context.strokePath()
+            context.move(to: CGPoint(x: 60, y: 340)); context.addLine(to: CGPoint(x: 60, y: 370)); context.strokePath()
+            context.move(to: CGPoint(x: 100, y: 340)); context.addLine(to: CGPoint(x: 100, y: 370)); context.strokePath()
+            context.move(to: CGPoint(x: 140, y: 340)); context.addLine(to: CGPoint(x: 140, y: 370)); context.strokePath()
+
+            //Cystic Fibrosis's
+            context.move(to: CGPoint(x: 50, y: 430)); context.addLine(to: CGPoint(x: 95, y: 430)); context.strokePath()
+            context.move(to: CGPoint(x: 80, y: 460)); context.addLine(to: CGPoint(x: 80, y: 430)); context.strokePath()
+            context.move(to: CGPoint(x: 20, y: 460)); context.addLine(to: CGPoint(x: 140, y: 460)); context.strokePath()
+            context.move(to: CGPoint(x: 20, y: 460)); context.addLine(to: CGPoint(x: 20, y: 490)); context.strokePath()
+            context.move(to: CGPoint(x: 60, y: 460)); context.addLine(to: CGPoint(x: 60, y: 490)); context.strokePath()
+            context.move(to: CGPoint(x: 100, y: 460)); context.addLine(to: CGPoint(x: 100, y: 490)); context.strokePath()
+            context.move(to: CGPoint(x: 140, y: 460)); context.addLine(to: CGPoint(x: 140, y: 490)); context.strokePath()
+            
+            
+            //Encapsulates the creation of the square which represents people in the hereditary diagrams.
+            func createSquare(row: Int, column: Int, outside: CGColor, inside: CGColor){
+                
+                context.setStrokeColor(outside)
+                context.setFillColor(inside)
+                
+                let square = CGRect(x: 10 + (40 * column), y: 300 + (60 * row), width: 20, height: 20)
+                context.fill(square)
+                context.stroke(square)
+                
             }
             
-            // Drawing text
-            let text =  "Hello Quartz 2D!"
-            text.draw(at: CGPoint(x: 20, y: 540), withAttributes: nil) // top-left of text
             
-            let textAttr = [
-                NSForegroundColorAttributeName : UIColor.magenta,
-                NSFontAttributeName : UIFont(name: "Papyrus", size: 24)!
-            ]
-            text.draw(at: CGPoint(x: 20, y: 560), withAttributes: textAttr)
+            // Drawing Huntington's hereditary diagram
+            
+            context.setLineWidth(9)
+            
+            createSquare(row: 0, column: 1, outside: greenColor, inside:blueColor)
+            createSquare(row: 0, column: 2, outside: blueColor, inside:blueColor)
+            
+            createSquare(row: 1, column: 0, outside: greenColor, inside:blueColor)
+            createSquare(row: 1, column: 1, outside: blueColor, inside:blueColor)
+            createSquare(row: 1, column: 2, outside: greenColor, inside:blueColor)
+            createSquare(row: 1, column: 3, outside: blueColor, inside:blueColor)
+            
+            //Drawing Cystic Fibrosis hereditary diagram
+            
+            createSquare(row: 2, column: 1, outside: blueColor, inside:greenColor)
+            createSquare(row: 2, column: 2, outside: blueColor, inside:greenColor)
+            
+            
+            createSquare(row: 3, column: 0, outside: greenColor, inside:greenColor)
+            createSquare(row: 3, column: 1, outside: blueColor, inside:greenColor)
+            createSquare(row: 3, column: 2, outside: blueColor, inside:greenColor)
+            createSquare(row: 3, column: 3, outside: blueColor, inside:blueColor)
         }
     }
 

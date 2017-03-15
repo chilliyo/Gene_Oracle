@@ -29,12 +29,13 @@ class Fifth: UIViewController {
         dismiss(animated: true, completion: nil)
     }
 
-    //I thought there would be a way to calculate the punnett squares programatically, but there really isn't. It had to be hardcoded.
+    //It was necessary that the punnet square calculations be hardcoded. Having the calculations be done programatically would not have been more efficient, it it were possible at all.
     override func viewWillAppear(_ animated: Bool) {
         if let p1 = parent1{
             if let p2 = parent2{
                 childname.text = "\(p1.name) and \(p2.name)'s child."
                 
+                //determine probable blood types
                 switch p1.bloodType {
                 case "A": switch p2.bloodType{
                         case "A": typeA.text = "81.64%"; typeO.text = "18.36%"
@@ -63,6 +64,7 @@ class Fifth: UIViewController {
                 default: break
                 }
                 
+                //determine probablilty of Sickle Cell Disease
                 if (p1.scd && p2.scd){
                     scdAfflicted.text = "100%"
                 }else if (!p1.scd && !p2.scd){
@@ -73,6 +75,7 @@ class Fifth: UIViewController {
                     scdHealthy.text = "99.5%"
                 }
                 
+                //Determine probability of Huntington's Disease
                 if (p1.hd && p2.hd){
                     hdAfflicted.text = "75%"
                     hdHealthy.text = "25%"
@@ -83,7 +86,7 @@ class Fifth: UIViewController {
                     hdHealthy.text = "50%"
                 }
                 
-                
+                //Determine probability of Cystic Fibrosis
                 if (p1.cf && p2.cf){
                     cfAfflicted.text = "100%"
                 }else if (!p1.scd && !p2.scd){
@@ -97,6 +100,7 @@ class Fifth: UIViewController {
         }
     }
     
+    //colors the background upon loading.
     override func viewDidLoad() {
         super.viewDidLoad()
         

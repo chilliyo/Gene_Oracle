@@ -190,7 +190,7 @@
                                 <navigationItem title="Profile Selector" prompt="    " id="qHI-XQ-PtU">
                                     <barButtonItem key="rightBarButtonItem" title="Continue" id="XAJ-73-tNo">
                                         <connections>
-                                            <segue destination="lAS-XU-nnC" kind="show" id="n1L-p2-Psm"/>
+                                            <segue destination="lAS-XU-nnC" kind="show" identifier="segueTest" id="n1L-p2-Psm"/>
                                         </connections>
                                     </barButtonItem>
                                 </navigationItem>

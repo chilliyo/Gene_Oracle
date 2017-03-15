@@ -46,6 +46,21 @@ var profiles = [
         bloodType:  "B",
         scd:        false,
         hd:         false,
+        cf:         false
+    ),
+    Profile(
+        name:       "Donlad Trump",
+        bloodType:  "AB",
+        scd:        true,
+        hd:         true,
         cf:         true
+    ),
+    
+    Profile(name: "Hilary Cliton",
+            bloodType:  "B",
+            scd:        false,
+            hd:         true,
+            cf:         false
     )
+
 ]

@@ -10,6 +10,7 @@ import UIKit
 
 class Forth: UITableViewController {
     
+    var selectedProfile = [Profile]()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -66,40 +67,14 @@ class Forth: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //let profile = profiles[indexPath.row]
-        //let cell = tableView.dequeueReusableCell(withIdentifier: profile.type.rawValue, for: indexPath)
-        
         let cell = tableView.cellForRow(at: indexPath)
-        
+        //let profile = profiles[indexPath.row]
         if (cell?.isSelected)! {
             cell?.accessoryType = UITableViewCellAccessoryType.checkmark
-//            cell.textLabel?.text = profile.name
-//            cell.detailTextLabel?.text = profile.bloodType
-            
+            selectedProfile.append(profiles[indexPath.row])
         } else {
             cell?.accessoryType = UITableViewCellAccessoryType.none
-//            cell?.textLabel?.text = profile.name
-//            cell?.detailTextLabel?.text = profile.bloodType
-            
         }
-       
-//        -tableView:didSelectRowAtIndexPath:
-//        
-//        UITableViewCell * cell = [tableView cellForRowAtIndexPath:indexPath];
-//        
-//        if (cell.selected) {
-//            cell.accessoryType = UITableViewCellAccessoryCheckmark;
-//        }else{
-//            cell.accessoryType = UITableViewCellAccessoryNone;
-//        }
-        
-    
-        //alert(with: profile)
-        
-        //self.tableView.deselectRow(at: indexPath, animated: true)
-        
-
-    
     }
     
 
@@ -108,27 +83,40 @@ class Forth: UITableViewController {
         let cell = tableView.cellForRow(at: indexPath)        
         if (!((cell?.isSelected)!)) {
             cell?.accessoryType = UITableViewCellAccessoryType.none
+            selectedProfile.removeLast()
         }
     
     }
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if let Fifth = segue.destination as? Fifth {
-            if let indexPath = self.tableView.indexPathForSelectedRow {
-                Fifth.parent1 = profiles[indexPath.row]
-                Fifth.parent2 = profiles[1]//what needs to go here?
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "segueTest"{
+            
+            if (selectedProfile.count != 2){
+                let message = "You have to select exactly two profile to continue."
+                let alertController = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
+                let okayAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
+                alertController.addAction(okayAction)
+                present(alertController, animated: true, completion: nil)
+                
+                return false
+            }
+            else {
+                return true
             }
         }
+        //by default, transition
+        return true
+
     }
-//    
-//    -tableView:didDeselectRowAtIndexPath
-//    
-//    UITableViewCell * cell = [tableView cellForRowAtIndexPath:indexPath];
-//    
-//    if (!cell.selected) {
-//    cell.accessoryType = UITableViewCellAccessoryNone;
-//    }
-//    
+
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let Fifth = segue.destination as? Fifth {
+            
+                Fifth.parent1 = selectedProfile[0]
+                Fifth.parent2 = selectedProfile[1]
+                selectedProfile = []
+        }
+    }
+
     func alert(with profile: Profile){
         let name = profile.name
         let bloodType = profile.bloodType

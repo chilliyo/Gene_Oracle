@@ -19,6 +19,12 @@ class Third: UITableViewController {
         let blueColor = UIColor(red: 140/255.0, green: 206/255.0, blue: 225/255.0, alpha: 1.0)
         view.backgroundColor = blueColor
         
+        /* setting up the gesture recoginzer for this view.
+         
+         reference of gesture recongnizer for a double tap feature. 
+         
+         - Qili Sui
+         */
         let doubleTap = UITapGestureRecognizer(target: self, action:#selector(doubleTap(tap:)))
         doubleTap.numberOfTapsRequired = 2
         doubleTap.numberOfTouchesRequired = 1
@@ -55,8 +61,6 @@ class Third: UITableViewController {
         cell.textLabel?.text = profile.name
         cell.detailTextLabel?.text = profile.bloodType
 
-
-        
         return cell
     }
     
@@ -65,6 +69,14 @@ class Third: UITableViewController {
         self.tableView.deselectRow(at: indexPath, animated: true)
     }
     
+    /* doubleTap(tap:) 
+     
+        is for handling the double tap gesteure recognizer
+        It will get the indexPath of the double tapped row,
+        and pass it to the alter to display the information for that particular row.
+     
+        - Qili Sui
+     */
     func doubleTap(tap: UITapGestureRecognizer) {
         let point: CGPoint = tap.location(in: self.tableView)
         if let indexPath = self.tableView.indexPathForRow(at: point) {
@@ -73,7 +85,13 @@ class Third: UITableViewController {
             alert(with: profile)
         }
     }
-    
+    /* alert(with )
+     
+     is for handling the selected row information 
+     which includes all information that a profile would have.
+     
+        - Qili Sui
+     */
     func alert(with profile: Profile){
         let name = profile.name
         let bloodType = profile.bloodType

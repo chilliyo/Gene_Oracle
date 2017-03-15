@@ -17,8 +17,10 @@ class Forth: UITableViewController {
         let blueColor = UIColor(red: 140/255.0, green: 206/255.0, blue: 225/255.0, alpha: 1.0)
         view.backgroundColor = blueColor
         
-        
+        //allow multiple selection in this table view. - Qili Sui
         tableView.allowsMultipleSelection = true
+        
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -52,7 +54,7 @@ class Forth: UITableViewController {
         let profile = profiles[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: profile.type.rawValue, for: indexPath)
         
-        // Configure the cell...
+        // Configure the cell with an AccessoryType: checkmark - Qili Sui
         
         if (cell.isSelected) {
             cell.accessoryType = UITableViewCellAccessoryType.checkmark;
@@ -66,6 +68,12 @@ class Forth: UITableViewController {
         return cell
     }
     
+    /* override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+     
+     is handling deselecting for reponsivness. 
+     
+     - Qili Sui
+     */
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)
         //let profile = profiles[indexPath.row]
@@ -87,6 +95,14 @@ class Forth: UITableViewController {
         }
     
     }
+    /* override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool
+     
+     handling the number of selection the user made. 
+     If the number of selection is not 2, then the segue will not continue
+     and and alert will popup.
+     
+     - Qili Sui
+     */
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if identifier == "segueTest"{
             
@@ -111,23 +127,13 @@ class Forth: UITableViewController {
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let Fifth = segue.destination as? Fifth {
             
+                //storing the only two profile object form the arary for the next screen - Qili Sui
                 Fifth.parent1 = selectedProfile[0]
                 Fifth.parent2 = selectedProfile[1]
+            
+                //empty the array for the next set of selection - Qili Sui
                 selectedProfile = []
         }
-    }
-
-    func alert(with profile: Profile){
-        let name = profile.name
-        let bloodType = profile.bloodType
-        var message = "Name: " + name + "\nBloodType: " + bloodType
-        if (profile.cf == true){message.append("\n Afflicted with Cystic Fibrosis")}
-        if (profile.hd == true){message.append("\n Afflicted with Huntington's Disease")}
-        if (profile.scd == true){message.append("\n Afflicted with Sickle Cell Disease")}
-        let alertController = UIAlertController(title: name, message: message, preferredStyle: .alert)
-        let okayAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
-        alertController.addAction(okayAction)
-        present(alertController, animated: true, completion: nil)
     }
     /*
      // Override to support conditional editing of the table view.
